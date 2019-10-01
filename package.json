@@ -1,0 +1,15 @@
+{
+  "name": "pre-commit-console-check",
+  "version": "1.0.0",
+  "description": "Searches the staged files for a commit attempting to identify outputs to the console.",
+  "repository": "https://gitlab.com/alexhodson72/pre-commit-console-check.git",
+  "author": "Alex Hodson <alexhodson72@gmail.com>",
+  "devDependencies": {
+    "husky": "^3.0.7"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
