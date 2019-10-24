@@ -10,11 +10,12 @@ exec < /dev/tty
 consoleregexp="console."
 # consoleregexp='print'
 
-## Add ". ':(exclude)src/'" for testing purposes
+# Add "-- . ':(exclude)[files]/'" at the end of each 'git diff' command to exclude that particular file/folder
+## "-- . ':(exclude)src/'" is used when testing new changes to ignore output commands in this file
 if test $(git diff --cached | grep ^+ | grep $consoleregexp | wc -l) != 0
 then
   echo -e "\n\033[1m\e[033mOutputs Found\e[39m\033[0m"
-  git grep -n -E --cached "$consoleregexp" $(git diff --cached --name-only  --diff-filter=d)
+  git grep -n -E --cached $consoleregexp $(git diff --cached --name-only  --diff-filter=d)
   echo -e "\n"
   echo "There are some occurrences of '$consoleregexp' at your modification. Please remove them before continuing."
   echo $yn | grep ^[Yy]$
