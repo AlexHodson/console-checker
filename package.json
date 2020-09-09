@@ -1,15 +1,24 @@
 {
-  "name": "pre-commit-console-check",
+  "name": "file-checker",
+  "type": "module",
   "version": "1.0.0",
-  "description": "Searches the staged files for a commit attempting to identify outputs to the console.",
-  "repository": "https://gitlab.com/alexhodson72/pre-commit-console-check.git",
-  "author": "Alex Hodson <alexhodson72@gmail.com>",
-  "devDependencies": {
-    "husky": "^3.0.7"
+  "description": "Scans all project files in search for specified values",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexHodson/console-checker.git"
+  },
+  "author": "Alex Hodson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexHodson/console-checker/issues"
+  },
+  "homepage": "https://github.com/AlexHodson/console-checker#readme",
+  "dependencies": {
+    "app-root-path": "^3.0.0"
   }
 }
